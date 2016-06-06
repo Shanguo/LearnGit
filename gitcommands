@@ -1,3 +1,5 @@
+#基础版
+git init
 git add filename1 filename2
 git commit -m "提交版本1"
 git status 			 //查看版本状态
@@ -12,3 +14,10 @@ git checkout -- file  	 	 //恢复文件到上次add或者commit状态，只能�
 git checkout 分支		 //切换分支
 git reset HEAD file		 //取消文件add状态，注意--此命令会解除多次add的版本
 git rm file			 //从版本库删除，然后commit完成删除，或者checkout -- 撤销删除（如果删除，记得先删除本地，再删除版本库）
+
+#远程版
+git remote add origin git@github.com:Shanguo/LearnGit.git 	//连接远程仓库，注意：第一次连接的远程仓库如果远程不是空的(新建的)那么先clone 才能push
+git push -u origin master					//提交到远程仓库,由于远程库是空的，第一次提交时使用-u参数，会把本地的master分支和远程的master分支关联起来
+git push origin master
+git push
+
