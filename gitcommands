@@ -1,6 +1,7 @@
 #基础版
 git init			//git初始化
-git add filename1 filename2	//暂存版本
+git add filename1 filename2	//暂存某些文件
+git add .			//暂存所有修改的文件
 git commit -m "提交版本1"	//提交版本
 git status 			//查看版本状态
 git diff filename               //查看某文件更改了那些
@@ -23,5 +24,8 @@ git push origin master
 git push
 
 #分支版
-git checkout -b dev		//创建新的分支：dev分支
+git branch dev 			//创建dev分支
+git checkout dev 		//切换到dev分支
+git checkout -b dev		//创建dev分支，并切换到dev
+git branck			//查看当前分支
 
