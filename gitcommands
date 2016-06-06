@@ -1,0 +1,14 @@
+git add filename1 filename2
+git commit -m "提交版本1"
+git status 			 //查看版本状态
+git diff filename                //查看某文件更改了那些
+git reset --hard HEAD^           //返回上个版本
+git reset --hard HEAD~10         //返回10个之前的版本
+git reset --hard 版本号          //返回某个版本
+git log                          //查看历史版本记录
+git log --pretty=oneline         //单行查看历史版本记录
+git reflog                       //查看版本穿越命令，可用于查找回退前的版本号
+git checkout -- file  	 	 //恢复文件到上次add或者commit状态，只能恢复还未被add的修改
+git checkout 分支		 //切换分支
+git reset HEAD file		 //取消文件add状态，注意--此命令会解除多次add的版本
+git rm file			 //从版本库删除，然后commit完成删除，或者checkout -- 撤销删除（如果删除，记得先删除本地，再删除版本库）
