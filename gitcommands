@@ -38,9 +38,12 @@ git stash apply			//恢复暂存的内容，但不删除暂存
 git stash pop			//恢复暂存内容，并删除
 git stash apply stash@{0}       //可以多次暂存，并指定恢复某次的暂存
 git stash pop stash@{0}         //可以多次暂存，并指定恢复某次的暂存
+<<<<<<< HEAD
 git remote 			//查看远程仓库的名称
 git remote -v			//查看远程仓库的详细信息
 git push origin master/dev 	//推送到远程仓库的某个分支
 git checkout -b dev origin/dev  //从远程仓库创建本地dev分支
+
+#标签 标签可以设置版本号，可以根据标签取出版本
 
 
