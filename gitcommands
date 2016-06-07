@@ -39,5 +39,6 @@ git stash pop			//恢复暂存内容，并删除
 git stash apply stash@{0}       //可以多次暂存，并指定恢复某次的暂存
 git stash pop stash@{0}         //可以多次暂存，并指定恢复某次的暂存
 
+#标签 标签可以设置版本号，可以根据标签取出版本
 
 
