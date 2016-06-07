@@ -1,3 +1,7 @@
+#自定义Git Config 文件: .git/config
+git config --global color.ui true	//设置git命令颜色
+git config --global alias.st status     //自定义缩略词
+
 #基础版
 git init			//git初始化
 git add filename1 filename2	//暂存某些文件
@@ -10,6 +14,7 @@ git reset --hard HEAD~10        //返回10个之前的版本
 git reset --hard 版本号         //返回某个版本
 git log                         //查看历史版本记录
 git log --pretty=oneline        //单行查看历史版本记录
+git log -l			//查看最后一条
 git reflog                      //查看版本穿越命令，可用于查找回退前的版本号
 git checkout -- file  	 	//恢复文件到上次add或者commit状态，只能恢复还未被add的修改
 git checkout 分支		//切换分支
@@ -38,12 +43,22 @@ git stash apply			//恢复暂存的内容，但不删除暂存
 git stash pop			//恢复暂存内容，并删除
 git stash apply stash@{0}       //可以多次暂存，并指定恢复某次的暂存
 git stash pop stash@{0}         //可以多次暂存，并指定恢复某次的暂存
-<<<<<<< HEAD
 git remote 			//查看远程仓库的名称
 git remote -v			//查看远程仓库的详细信息
 git push origin master/dev 	//推送到远程仓库的某个分支
 git checkout -b dev origin/dev  //从远程仓库创建本地dev分支
 
-#标签 标签可以设置版本号，可以根据标签取出版本
+#标签 标签可以设置版本号，可以根据标签取出版本,因为创建的标签都只存储在本地，不会自动推送到远程。所以，打错的标签可以在本地安全删除。标签需要推送
+git tag v1.0 			//给当前打标签
+git tag v0.9 32453		//给某个版本打标签
+git tag				//查看标签
+git show v0.9			//查看标签版本信息
+git tag -a v0.8 -m "标签说明" 361873	//-a指明标签 -m说明
+git tag -s v0.2 -m "标签说明" fec145a	//-s私钥签名一个标签
+git tag -d v0.9 		//删除标签
+git push origin v1.0		//标签推送到远程
+git push origin --tags		//推送所有未推送的tag 
+git push origin :refs/tags/v0.9 //注意，先从本地删除标签，然后做本条操作完成远程标签的删除
 
-
+#Git 忽略文件
+https://github.com/github/gitignore
