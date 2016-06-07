@@ -29,5 +29,15 @@ git checkout dev 		//切换到dev分支
 git checkout -b dev		//创建dev分支，并切换到dev
 git branch			//查看当前分支
 git merge dev			//把dev分支归并到本分支  Fast-forward是快进合并模式，相当于指针修改
+git merge --no-ff -m "合并" dev	//把dev分支合并到本分支 非Fast-forward模式
 git branch -d dev		//删除dev分支
 git log --graph --pretty=oneline --abbrev-commit 	//查看分支合并情况
+git stash			//暂存功能。开发中突发情况需要在本次修改前做处理，那么把现在修改的暂存，等于清空状态，然后切换到其他分支完成需要的处理，在回来继续开发
+git stash lis			//读取暂存列表
+git stash apply			//恢复暂存的内容，但不删除暂存
+git stash pop			//恢复暂存内容，并删除
+git stash apply stash@{0}       //可以多次暂存，并指定恢复某次的暂存
+git stash pop stash@{0}         //可以多次暂存，并指定恢复某次的暂存
+
+
+
